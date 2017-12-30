@@ -33,11 +33,10 @@ export default lifecycle({
   componentWillMount() {
     const { author, permlink } = this.props.match.params;
     client.database
-      .getDiscussions("blog", {
+      .getDiscussions("created", {
         limit: 1,
-        parent_author: author,
-        parent_permlink: permlink,
-        tag: author
+        start_author: author,
+        start_permlink: permlink
       })
       .then(stories => {
         console.log(stories);
