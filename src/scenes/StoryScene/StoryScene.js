@@ -14,11 +14,6 @@ const StoryScene = props => {
   // Get images from story object
   const images = propOr([], "image")(parseMetadata(story.json_metadata));
   const image = head(images);
-  // Convert story.body (markdown or html) to pure text.
-  const text = removeMarkdown(story.body)
-    .split(" ")
-    .splice(0, 20)
-    .join(" ");
   return (
     <div>
       <Header>{story.title}</Header>
