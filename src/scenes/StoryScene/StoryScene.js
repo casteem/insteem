@@ -39,7 +39,6 @@ export default lifecycle({
         start_permlink: permlink
       })
       .then(stories => {
-        console.log(stories);
         this.setState({ story: head(stories) });
       });
   }
