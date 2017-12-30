@@ -1,20 +1,27 @@
 import React, { Component } from "react";
 import "./App.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import StoriesScene from "scenes/StoriesScene/StoriesScene";
-import { Container } from "semantic-ui-react";
+import { Container, Grid } from "semantic-ui-react";
+import MainMenu from "components/Menu/MainMenu";
+import CategoryMenu from "components/Menu/CategoryMenu";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Insteem</h1>
-          <h2>News on Steem</h2>
-        </header>
-        <Container>
-          <StoriesScene />
-        </Container>
-      </div>
+      <Router>
+        <div className="App">
+          <MainMenu />
+          <CategoryMenu />
+          <Container>
+            <Grid>
+              <Grid.Column width={10}>
+                <Route path="/" component={StoriesScene} />
+              </Grid.Column>
+            </Grid>
+          </Container>
+        </div>
+      </Router>
     );
   }
 }
