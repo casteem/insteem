@@ -18,14 +18,18 @@ const getStories = category =>
 export default lifecycle({
   componentWillMount() {
     const { category } = this.props.match.params;
+    console.log(category);
     getStories(category).then(stories => {
       this.setState({ stories });
     });
   },
-  componentWillReceiveProps() {
-    const { category } = this.props.match.params;
-    getStories(category).then(stories => {
-      this.setState({ stories });
-    });
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.category !== nextProps.match.params.category) {
+      const { category } = nextProps.match.params;
+      console.log(category);
+      getStories(category).then(stories => {
+        this.setState({ stories });
+      });
+    }
   }
 })(CategoryScene);
