@@ -19,10 +19,17 @@ const StoryListItem = props => {
     <Item>
       {image ? <Item.Image src={image} /> : null}
       <Item.Content>
-        <Item.Header>{story.title}</Item.Header>
+        <Item.Header
+          as={Link}
+          to={`/stories/${story.author}/${story.permlink}`}
+        >
+          {story.title}
+        </Item.Header>
         <Item.Description>
           {text} <br />
-          <Link to="/">Read more...</Link>
+          <Link to={`/stories/${story.author}/${story.permlink}`}>
+            Read more...
+          </Link>
         </Item.Description>
       </Item.Content>
     </Item>
