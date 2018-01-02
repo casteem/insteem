@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Container, Grid } from "semantic-ui-react";
+import { Container, Grid, Segment, Header, Label } from "semantic-ui-react";
 
 import StoriesScene from "scenes/StoriesScene";
 import StoryScene from "scenes/StoryScene";
@@ -30,6 +30,23 @@ class App extends Component {
                   path="/stories/:author/:permlink"
                   component={StoryScene}
                 />
+              </Grid.Column>
+              <Grid.Column width={6}>
+                <Header attached="top">How to</Header>
+                <Segment attached>
+                  <ul>
+                    <li>Go to steemit.com</li>
+                    <li>Create a new post</li>
+                    <li>
+                      Use{" "}
+                      <Label color="blue" basic>
+                        news
+                      </Label>{" "}
+                      as the first tag  for now
+                    </li>
+                    <li>Use at least one of the tags from the main menu</li>
+                  </ul>
+                </Segment>
               </Grid.Column>
             </Grid>
           </Container>
