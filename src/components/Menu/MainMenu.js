@@ -16,6 +16,10 @@ const MainMenu = props => {
             shape="rounded"
             src="/insteem.png"
           />
+          &nbsp;{" "}
+          <span style={styles.brand}>
+            INSTEEM <span style={styles.brand.beta}>beta</span>
+          </span>
         </Menu.Item>
         {/*<Menu.Item as={Link} to="/comments">*/}
         {/*Comments*/}
@@ -48,5 +52,10 @@ export default MainMenu;
 const styles = {
   menu: {
     marginBottom: 20
+  },
+  brand: {
+    fontWeight: "bold",
+    fontSize: 26,
+    beta: { fontSize: 11 }
   }
 };
