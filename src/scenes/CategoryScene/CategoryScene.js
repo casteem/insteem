@@ -2,6 +2,7 @@ import React from "react";
 import client from "dsteem.client";
 import { lifecycle } from "recompose";
 import StoryList from "components/StoryList/StoryList";
+import { rejectByTag } from "services/helpers/filter";
 
 const CategoryScene = props => {
   const { stories } = props;
@@ -20,6 +21,7 @@ export default lifecycle({
     const { category } = this.props.match.params;
     console.log(category);
     getStories(category).then(stories => {
+      stories = rejectByTag(stories, "nsfw");
       this.setState({ stories });
     });
   },
@@ -28,6 +30,7 @@ export default lifecycle({
       const { category } = nextProps.match.params;
       console.log(category);
       getStories(category).then(stories => {
+        stories = rejectByTag(stories, "nsfw");
         this.setState({ stories });
       });
     }

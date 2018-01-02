@@ -1,9 +1,24 @@
 import _ from "lodash";
-import Format from "./format";
+import { calculateReputationScore } from "./format";
+import { parseMetadata } from "services/helpers/format";
+import { contains, reject } from "ramda";
+
+export const containsTag = (json, tag = "") => {
+  const activeTags = parseMetadata(json).tags;
+  const bool = contains(tag, activeTags);
+  console.log(bool);
+  return bool;
+};
+
+export const rejectByTag = (stories, tags = []) => {
+  console.log(tags);
+  stories = reject(story => containsTag(story.json_metadata, tags))(stories);
+  return stories;
+};
 
 export const filterReputation = (postList = [], maxRep = 75, minRep = 25) => {
   return _.reject(postList, post => {
-    const score = Format.calculateReputationScore(post.author_reputation);
+    const score = calculateReputationScore(post.author_reputation);
     if (score <= maxRep && score >= minRep) return false;
     return true;
   });
@@ -18,7 +33,7 @@ export const filterAll = (
   minChars
 ) => {
   return _.reject(postList, post => {
-    const score = Format.calculateReputationScore(post.author_reputation);
+    const score = calculateReputationScore(post.author_reputation);
     const chars = _.get(post, "body_length");
     if (
       score <= maxRep &&
