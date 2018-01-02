@@ -31,6 +31,7 @@ const StoryListItem = props => {
           <Label color="blue" size="small" basic>
             {story.category}
           </Label>
+          by <Link to={`/@${story.author}`}>{story.author}</Link>
         </Item.Meta>
         <Item.Description>
           {text} <br />
