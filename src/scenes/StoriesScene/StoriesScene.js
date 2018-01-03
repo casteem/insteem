@@ -14,8 +14,10 @@ const StoriesScene = props => {
 
 export default lifecycle({
   componentWillMount() {
-    client.database.getDiscussions("created", { limit: 20 }).then(stories => {
-      this.setState({ stories: rejectByTag(stories, "nsfw") });
-    });
+    client.database
+      .getDiscussions("created", { limit: 20, tag: "news" })
+      .then(stories => {
+        this.setState({ stories: rejectByTag(stories, "nsfw") });
+      });
   }
 })(StoriesScene);
