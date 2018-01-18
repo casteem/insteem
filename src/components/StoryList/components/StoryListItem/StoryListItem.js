@@ -1,10 +1,11 @@
 import React from "react";
-import moment from "moment";
 import { propOr, head } from "ramda";
 import { parseMetadata } from "services/helpers/format";
 import { Link } from "react-router-dom";
-import { Item, Label } from "semantic-ui-react";
+import { Item } from "semantic-ui-react";
 import removeMarkdown from "remove-markdown";
+
+import Meta from "./components/StoryListItemMeta";
 
 const StoryListItem = props => {
   const { story } = props;
@@ -26,13 +27,9 @@ const StoryListItem = props => {
         >
           {story.title}
         </Item.Header>
-        <Item.Meta>
-          {moment.utc(story.created).fromNow()} in {" "}
-          <Label color="blue" size="small" basic>
-            {story.category}
-          </Label>
-          by <Link to={`/@${story.author}`}>{story.author}</Link>
-        </Item.Meta>
+
+        <Meta story={story} />
+
         <Item.Description>
           {text} <br />
           <Link to={`/stories/${story.author}/${story.permlink}`}>

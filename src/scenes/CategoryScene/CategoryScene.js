@@ -21,6 +21,7 @@ const QUERY = gql`
       title
       body
       author
+      author_reputation
       category
       permlink
       json_metadata
