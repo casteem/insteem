@@ -12,16 +12,22 @@ const CategoryScene = props => {
 };
 
 const QUERY = gql`
-  {
-    getDiscussions {
+  query discussions($category: String!) {
+    getDiscussions(query: { tag: $category }) {
       id
       title
       author
       category
       permlink
       json_metadata
+      created
     }
   }
 `;
 
-export default graphql(QUERY)(CategoryScene);
+export default graphql(QUERY, {
+  options: ({ match }) => ({
+    variables: { category: match.params.category },
+    fetchPolicy: "network-only"
+  })
+})(CategoryScene);
