@@ -1,38 +1,27 @@
 import React from "react";
-import client from "dsteem.client";
 import { lifecycle } from "recompose";
 import StoryList from "components/StoryList/StoryList";
 import { rejectByTag } from "services/helpers/filter";
+import { graphql } from "react-apollo";
+import gql from "graphql-tag";
 
 const CategoryScene = props => {
-  const { stories } = props;
-  return (
-    <div>
-      <StoryList stories={stories || []} />
-    </div>
-  );
+  const { data: { loading, getDiscussions: stories } } = props;
+  if (loading) return null;
+  return <div>{<StoryList stories={stories || []} />}</div>;
 };
 
-const getStories = category =>
-  client.database.getDiscussions("created", { limit: 20, tag: category });
-
-export default lifecycle({
-  componentWillMount() {
-    const { category } = this.props.match.params;
-    console.log(category);
-    getStories(category).then(stories => {
-      stories = rejectByTag(stories, "nsfw");
-      this.setState({ stories });
-    });
-  },
-  componentWillReceiveProps(nextProps) {
-    if (this.props.match.params.category !== nextProps.match.params.category) {
-      const { category } = nextProps.match.params;
-      console.log(category);
-      getStories(category).then(stories => {
-        stories = rejectByTag(stories, "nsfw");
-        this.setState({ stories });
-      });
+const QUERY = gql`
+  {
+    getDiscussions {
+      id
+      title
+      author
+      category
+      permlink
+      json_metadata
     }
   }
-})(CategoryScene);
+`;
+
+export default graphql(QUERY)(CategoryScene);
