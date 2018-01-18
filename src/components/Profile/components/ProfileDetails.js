@@ -4,6 +4,10 @@ import { userData } from "services/helpers/format";
 import { Segment, List } from "semantic-ui-react";
 // import ExternalLink from "components/Elements/ExternalLink";
 
+const renderVotingPower = vp => {
+  return vp / 100;
+};
+
 const ProfileDetails = ({ user }) => {
   return (
     <Segment>
@@ -13,6 +17,7 @@ const ProfileDetails = ({ user }) => {
         <List.Item>{_.get(userData(user), "about")}</List.Item>
         <List.Item>
           {/*<ExternalLink url={_.get(userData(user), "website")} value="test" />*/}
+          Voting Power: {renderVotingPower(user.voting_power)}
         </List.Item>
       </List>
     </Segment>
