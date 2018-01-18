@@ -3,6 +3,13 @@ import React from "react";
 // import { signout } from "../../services/auth/actions";
 import { Link } from "react-router-dom";
 import { Container, Menu, Image } from "semantic-ui-react";
+import styled from "styled-components";
+
+const Title = styled.span`
+  padding-left: 100px;
+  color: darkgray;
+  text-align: right;
+`;
 
 const MainMenu = props => {
   return (
@@ -20,6 +27,7 @@ const MainMenu = props => {
           <span style={styles.brand}>
             INSTEEM <span style={styles.brand.beta}>beta</span>
           </span>
+          <Title>Decentralized News by Independent Journalists.</Title>
         </Menu.Item>
         {/*<Menu.Item as={Link} to="/comments">*/}
         {/*Comments*/}

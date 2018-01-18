@@ -20,7 +20,8 @@
     "recompose": "^0.26.0",
     "remove-markdown": "^0.2.2",
     "semantic-ui-react": "^0.77.1",
-    "steem": "^0.6.7"
+    "steem": "^0.6.7",
+    "styled-components": "^2.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
