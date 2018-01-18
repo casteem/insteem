@@ -12,10 +12,11 @@ const CategoryScene = props => {
 };
 
 const QUERY = gql`
-  query discussions($category: String!) {
+  query discussions($category: String = "news") {
     getDiscussions(query: { tag: $category }) {
       id
       title
+      body
       author
       category
       permlink

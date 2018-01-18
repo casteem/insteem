@@ -24,7 +24,7 @@ class App extends Component {
               <Grid>
                 <Grid.Column width={10}>
                   <Route exact path="/@:author" component={ProfileScene} />
-                  <Route exact path="/" component={StoriesScene} />
+                  <Route exact path="/" component={CategoryScene} />
                   <Route
                     exact
                     path="/categories/:category"

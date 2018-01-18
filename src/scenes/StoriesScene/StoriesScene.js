@@ -5,10 +5,11 @@ import StoryList from "components/StoryList";
 import { rejectByTag } from "services/helpers/filter";
 import { graphql } from "react-apollo";
 import gql from "graphql-tag";
+import { Loader } from "semantic-ui-react";
 
 const StoriesScene = props => {
   const { data: { loading, getDiscussions: stories } } = props;
-  if (loading) return null;
+  if (loading) return <Loader />;
   return (
     <div>
       <StoryList stories={stories || []} />
