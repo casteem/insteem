@@ -16,7 +16,7 @@ const CategoryScene = props => {
 
 const QUERY = gql`
   query discussions($category: String = "news") {
-    getDiscussions(query: { tag: $category }) {
+    getDiscussions(by: "hot", query: { tag: $category }) {
       id
       title
       body

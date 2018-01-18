@@ -47,6 +47,7 @@ const QUERY = gql`
       json_metadata
       created
       reputation
+      voting_power
     }
   }
 `;

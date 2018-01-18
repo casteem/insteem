@@ -31,7 +31,7 @@ const StoryListItem = props => {
 
         <Meta story={story} />
 
-        <Item.Description>
+        <Item.Description style={{ overflow: "hidden" }}>
           {text} <br />
           <Link to={`/stories/${story.author}/${story.permlink}`}>
             Read more...
