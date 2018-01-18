@@ -6,6 +6,7 @@ import { Item } from "semantic-ui-react";
 import removeMarkdown from "remove-markdown";
 
 import Meta from "./components/StoryListItemMeta";
+import Extra from "./components/StoryListItemExtra";
 
 const StoryListItem = props => {
   const { story } = props;
@@ -36,6 +37,8 @@ const StoryListItem = props => {
             Read more...
           </Link>
         </Item.Description>
+
+        <Extra story={story} />
       </Item.Content>
     </Item>
   );

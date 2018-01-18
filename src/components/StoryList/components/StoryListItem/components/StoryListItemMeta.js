@@ -6,7 +6,9 @@ import { Label } from "semantic-ui-react";
 import steem from "steem";
 
 const Container = styled.div`
-  padding: 10px;
+  color: gray;
+  font-size: 0.9em;
+  padding-top: 5px;
 `;
 
 const StoryListItemMeta = ({ story }) => {
