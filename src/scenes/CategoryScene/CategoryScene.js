@@ -7,13 +7,10 @@ import gql from "graphql-tag";
 import { Loader } from "semantic-ui-react";
 
 const CategoryScene = props => {
-  const { data: { loading, getDiscussions: stories } } = props;
-  if (loading)
-    return (
-      <div>
-        <Loader active />
-      </div>
-    );
+  let { data: { loading, getDiscussions: stories } } = props;
+  if (loading) return <Loader active />;
+  // Hide `nsfw` stories.
+  stories = rejectByTag(stories, "nsfw");
   return <div>{<StoryList stories={stories || []} />}</div>;
 };
 
