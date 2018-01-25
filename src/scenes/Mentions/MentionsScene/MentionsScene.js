@@ -13,7 +13,10 @@ const MentionsScene = props => {
       <h3>Total Mentions: {mentions.hits}</h3>
       <MentionPagination mentions={mentions} username={match.params.username} />
       {mentions.results.map(mention => (
-        <MentionItem key={mention.permlink} mention={mention} />
+        <MentionItem
+          key={mention.permlink + mention.created}
+          mention={mention}
+        />
       ))}
     </div>
   );
