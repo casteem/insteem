@@ -11,6 +11,7 @@ import CategoryScene from "scenes/CategoryScene/CategoryScene";
 import MainMenu from "components/Menu/MainMenu";
 import CategoryMenu from "components/Menu/CategoryMenu";
 import ProfileScene from "scenes/Profile/ProfileScene";
+import MentionsScene from "scenes/Mentions/MentionsScene";
 
 class App extends Component {
   render() {
@@ -34,6 +35,11 @@ class App extends Component {
                     exact
                     path="/stories/:author/:permlink"
                     component={StoryScene}
+                  />
+                  <Route
+                    exact
+                    path="/mentions/@:username/:page?"
+                    component={MentionsScene}
                   />
                 </Grid.Column>
                 <Grid.Column width={6}>
