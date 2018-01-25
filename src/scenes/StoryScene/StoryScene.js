@@ -6,6 +6,11 @@ import removeMarkdown from "remove-markdown";
 import { Header, Image } from "semantic-ui-react";
 import Markdown from "react-markdown";
 import { parseMetadata } from "services/helpers/format";
+import styled from "styled-components";
+
+const Container = styled.div`
+  overflow: hidden;
+`;
 
 const StoryScene = props => {
   const { story } = props;
@@ -15,7 +20,7 @@ const StoryScene = props => {
   const images = propOr([], "image")(parseMetadata(story.json_metadata));
   const image = head(images);
   return (
-    <div>
+    <Container>
       <Header>{story.title}</Header>
 
       {image ? <Image src={image} /> : <div />}
@@ -23,9 +28,10 @@ const StoryScene = props => {
       <Markdown
         source={story.body}
         skipHtml={false}
+        escapeHtml={false}
         disallowedTypes={["image"]}
       />
-    </div>
+    </Container>
   );
 };
 
