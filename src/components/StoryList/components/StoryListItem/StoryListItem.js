@@ -33,9 +33,6 @@ const StoryListItem = props => {
 
         <Item.Description style={{ overflow: "hidden" }}>
           {text} <br />
-          <Link to={`/stories/${story.author}/${story.permlink}`}>
-            Read more...
-          </Link>
         </Item.Description>
 
         <Extra story={story} />
