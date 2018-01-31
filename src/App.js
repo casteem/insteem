@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/lib/integration/react";
 import configureStore from "services/state/store";
 
+import SigninScene from "scenes/Auth/SigninScene/Signin.scene";
 import StoriesScene from "scenes/StoriesScene";
 import StoryScene from "scenes/StoryScene";
 import CategoryScene from "scenes/CategoryScene/CategoryScene";
@@ -37,6 +38,7 @@ class App extends Component {
                         component={ProfileScene}
                       />
                       <Route exact path="/" component={CategoryScene} />
+                      <Route exact path="/signin" component={SigninScene} />
                       <Route
                         exact
                         path="/categories/:category"

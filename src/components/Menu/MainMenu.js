@@ -1,6 +1,6 @@
 import React from "react";
-// import { connect } from "react-redux";
-// import { signout } from "../../services/auth/actions";
+import { connect } from "react-redux";
+import { signout } from "services/state/auth/actions";
 import { Link } from "react-router-dom";
 import { Container, Menu, Image } from "semantic-ui-react";
 import styled from "styled-components";
@@ -12,6 +12,7 @@ const Title = styled.span`
 `;
 
 const MainMenu = props => {
+  const { isSignedIn } = props;
   return (
     <Menu borderless stackable fixed="top" style={styles.menu}>
       <Container>
@@ -38,24 +39,37 @@ const MainMenu = props => {
         {/*<Menu.Item as={Link} to="/mentions">*/}
         {/*Mentions*/}
         {/*</Menu.Item>*/}
+        <Menu.Menu position="right" />
         <Menu.Menu position="right">
-          {/*<Menu.Item onClick={props.onSignout}>Sign Out</Menu.Item>*/}
+          {isSignedIn ? (
+            <Menu.Item onClick={props.onSignout}>Sign Out</Menu.Item>
+          ) : (
+            <Menu.Item as={Link} to="/signin">
+              Signin
+            </Menu.Item>
+          )}
         </Menu.Menu>
       </Container>
     </Menu>
   );
 };
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     onSignout: () => {
-//       dispatch(signout());
-//     }
-//   };
-// };
+const mapStateToProps = state => {
+  return {
+    isSignedIn: state.auth.isSignedIn
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onSignout: () => {
+      dispatch(signout());
+    }
+  };
+};
 
 // export default connect(null, mapDispatchToProps)(MainMenu);
-export default MainMenu;
+export default connect(mapStateToProps, mapDispatchToProps)(MainMenu);
 
 const styles = {
   menu: {
