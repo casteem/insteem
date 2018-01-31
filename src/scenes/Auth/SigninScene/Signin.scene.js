@@ -31,7 +31,6 @@ class SignIn extends React.Component {
           <Form style={{ padding: 20, textAlign: "center" }}>
             <Form.Field>
               <Input
-                style={style.input}
                 onChange={event =>
                   this.setState({ username: event.target.value })
                 }
@@ -41,7 +40,6 @@ class SignIn extends React.Component {
             </Form.Field>
             <Form.Field>
               <Input
-                style={style.input}
                 onChange={event =>
                   this.setState({ password: event.target.value })
                 }
@@ -78,15 +76,3 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
-
-// Style for the component.
-const style = {
-  input: {
-    height: 40,
-    padding: 5,
-    borderColor: "silver",
-    borderRadius: 5,
-    borderWidth: 1,
-    margin: 10
-  }
-};
