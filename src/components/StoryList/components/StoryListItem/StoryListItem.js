@@ -16,7 +16,7 @@ const StoryListItem = props => {
   // Convert story.body (markdown or html) to pure text.
   const text = removeMarkdown(story.body)
     .split(" ")
-    .splice(0, 20)
+    // .splice(0, 10)
     .join(" ");
   return (
     <Item>
@@ -31,7 +31,13 @@ const StoryListItem = props => {
 
         <Meta story={story} />
 
-        <Item.Description style={{ overflow: "hidden" }}>
+        <Item.Description
+          style={{
+            overflow: "hidden",
+            whiteSpace: "nowrap",
+            textOverflow: "ellipsis"
+          }}
+        >
           {text} <br />
         </Item.Description>
 
