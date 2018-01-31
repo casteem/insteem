@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import { Container, Menu, Image } from "semantic-ui-react";
 import styled from "styled-components";
 
+import AccountMenu from "components/Menu/AccountMenu";
+import SigninModal from "scenes/Auth/SigninModal";
+
 const Title = styled.span`
   padding-left: 100px;
   color: darkgray;
@@ -42,10 +45,10 @@ const MainMenu = props => {
         <Menu.Menu position="right" />
         <Menu.Menu position="right">
           {isSignedIn ? (
-            <Menu.Item onClick={props.onSignout}>Sign Out</Menu.Item>
+            <AccountMenu />
           ) : (
-            <Menu.Item as={Link} to="/signin">
-              Signin
+            <Menu.Item link>
+              <SigninModal />
             </Menu.Item>
           )}
         </Menu.Menu>

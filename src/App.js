@@ -8,8 +8,8 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/lib/integration/react";
 import configureStore from "services/state/store";
 
+import IndexScene from "scenes/Index/IndexScene";
 import SigninScene from "scenes/Auth/SigninScene/Signin.scene";
-import StoriesScene from "scenes/StoriesScene";
 import StoryScene from "scenes/StoryScene";
 import CategoryScene from "scenes/CategoryScene/CategoryScene";
 import MainMenu from "components/Menu/MainMenu";
@@ -30,51 +30,24 @@ class App extends Component {
                 <MainMenu />
                 <CategoryMenu />
                 <Container>
-                  <Grid>
-                    <Grid.Column width={10}>
-                      <Route
-                        exact
-                        path="/@:username"
-                        component={ProfileScene}
-                      />
-                      <Route exact path="/" component={CategoryScene} />
-                      <Route exact path="/signin" component={SigninScene} />
-                      <Route
-                        exact
-                        path="/categories/:category"
-                        component={CategoryScene}
-                      />
-                      <Route
-                        exact
-                        path="/stories/:author/:permlink"
-                        component={StoryScene}
-                      />
-                      <Route
-                        exact
-                        path="/mentions/@:username/:page?"
-                        component={MentionsScene}
-                      />
-                    </Grid.Column>
-                    <Grid.Column width={6}>
-                      <Header attached="top">How to</Header>
-                      <Segment attached>
-                        <ul>
-                          <li>Go to steemit.com</li>
-                          <li>Create a new post</li>
-                          <li>
-                            Use{" "}
-                            <Label color="blue" basic>
-                              news
-                            </Label>{" "}
-                            as the first tag for now
-                          </li>
-                          <li>
-                            Use at least one of the tags from the main menu
-                          </li>
-                        </ul>
-                      </Segment>
-                    </Grid.Column>
-                  </Grid>
+                  <Route exact path="/@:username" component={ProfileScene} />
+                  <Route exact path="/" component={IndexScene} />
+                  <Route exact path="/signin" component={SigninScene} />
+                  <Route
+                    exact
+                    path="/categories/:category"
+                    component={CategoryScene}
+                  />
+                  <Route
+                    exact
+                    path="/stories/:author/:permlink"
+                    component={StoryScene}
+                  />
+                  <Route
+                    exact
+                    path="/mentions/@:username/:page?"
+                    component={MentionsScene}
+                  />
                 </Container>
               </div>
             </Router>

@@ -28,7 +28,7 @@ class SignIn extends React.Component {
     return (
       <Grid centered>
         <Grid.Column width="6">
-          <Form style={{ padding: 20 }}>
+          <Form style={{ padding: 20, textAlign: "center" }}>
             <Form.Field>
               <Input
                 style={style.input}
