@@ -1,5 +1,5 @@
 import React from "react";
-import { head, isEmpty } from "ramda";
+import { head, isNil } from "ramda";
 import moment from "moment";
 import { userImage } from "services/helpers/format";
 import { graphql } from "react-apollo";
@@ -8,15 +8,22 @@ import steem from "steem";
 
 import Loader from "../../components/Loader";
 import ProfileDetails from "components/Profile/components/ProfileDetails";
-// import StoryList from "../../components/Story/StoryList";
+import StoryList from "components/StoryList/StoryList";
 // import FavoriteButton from "../../components/Favorites/components/FavoriteButton";
 import { Icon, Image, Label } from "semantic-ui-react";
 // import ExternalLink from "components/Elements/ExternalLink";
 
 class ProfileScene extends React.Component {
   render() {
-    const { data: { loading, account: user } } = this.props;
+    const {
+      data: {
+        loading,
+        account: user,
+        getDiscussionsByAuthorBeforeDate: stories
+      }
+    } = this.props;
     if (loading) return <Loader />;
+    if (isNil(user)) return null;
     return (
       <div>
         <h1>
@@ -33,7 +40,7 @@ class ProfileScene extends React.Component {
 
         <ProfileDetails user={user} />
 
-        {/*<StoryList stories={posts} />*/}
+        <StoryList stories={stories} />
       </div>
     );
   }
@@ -48,6 +55,19 @@ const QUERY = gql`
       created
       reputation
       voting_power
+    }
+
+    getDiscussionsByAuthorBeforeDate(author: $username) {
+      id
+      title
+      body
+      author
+      author_reputation
+      net_votes
+      category
+      permlink
+      json_metadata
+      created
     }
   }
 `;

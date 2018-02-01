@@ -1,5 +1,6 @@
 import steem from "steem";
 import _ from "lodash";
+import { isNil } from "ramda";
 
 /**
  * Take the author_score from steem and convert it in a human readable score.
@@ -24,6 +25,7 @@ export const parseMetadata = json => {
 
 // Get profile picture for user.
 export const userImage = user => {
+  if (isNil(user)) return;
   const image = _.get(JSON.parse(user.json_metadata), "profile.profile_image");
   if (_.isEmpty(image)) return null;
   return image;
