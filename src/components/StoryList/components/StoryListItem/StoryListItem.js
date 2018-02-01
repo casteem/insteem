@@ -33,6 +33,7 @@ const StoryListItem = props => {
 
         <Item.Description
           style={{
+            fontSize: "1.15rem",
             overflow: "hidden",
             whiteSpace: "nowrap",
             textOverflow: "ellipsis"

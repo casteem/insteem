@@ -44,7 +44,10 @@ const QUERY = gql`
     getDiscussions(by: "hot") {
       id
       title
+      body
       author
+      author_reputation
+      net_votes
       category
       permlink
       json_metadata

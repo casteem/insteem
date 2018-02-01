@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import "semantic-ui-css/semantic.min.css";
 import { ApolloProvider } from "react-apollo";
 import client from "services/graphql/client";
 import { Container, Grid, Segment, Header, Label } from "semantic-ui-react";

@@ -17,7 +17,7 @@ const Title = styled.span`
 const MainMenu = props => {
   const { isSignedIn } = props;
   return (
-    <Menu borderless stackable fixed="top" style={styles.menu}>
+    <Menu borderless stackable fixed="top" style={styles.menu} size="large">
       <Container>
         <Menu.Item as={Link} to={"/"}>
           {/*<img src="/insteem.png" alt="" />*/}
