@@ -11,7 +11,7 @@ import { userImage } from "services/helpers/format";
 
 const AccountMenu = props => {
   const { signout, data: { account: user, loading } } = props;
-  if (loading) return <Loader />;
+  if (loading) return null;
   if (isEmpty(user) || isNil(user)) {
     // If user not found, singout and return empty comp.
     props.signout();
