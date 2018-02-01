@@ -75,6 +75,7 @@ const QUERY = gql`
 export default graphql(QUERY, {
   options: ({ match }) => ({
     variables: { username: match.params.username },
-    fetchPolicy: "network-only"
+    // Polling: 1min
+    pollInterval: 60 * 1000
   })
 })(ProfileScene);

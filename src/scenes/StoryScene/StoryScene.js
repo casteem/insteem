@@ -2,14 +2,25 @@ import React from "react";
 import client from "dsteem.client";
 import { lifecycle } from "recompose";
 import { head, propOr } from "ramda";
-import removeMarkdown from "remove-markdown";
-import { Header, Image } from "semantic-ui-react";
+import { Grid, Header, Image } from "semantic-ui-react";
 import Markdown from "react-markdown";
 import { parseMetadata } from "services/helpers/format";
 import styled from "styled-components";
 
+import StoryMeta from "./components/StoryMeta";
+import StoryMetaBox from "./components/StoryMetaBox";
+
 const Container = styled.div`
   overflow: hidden;
+  margin-bottom: 10rem;
+`;
+
+const CoverImage = styled.div`
+  margin-bottom: 1rem;
+`;
+
+const Content = styled.div`
+  font-size: 1.1rem;
 `;
 
 const StoryScene = props => {
@@ -21,16 +32,26 @@ const StoryScene = props => {
   const image = head(images);
   return (
     <Container>
-      <Header>{story.title}</Header>
+      <Grid>
+        <Grid.Column width={11}>
+          <Header>{story.title}</Header>
 
-      {image ? <Image src={image} /> : <div />}
+          <StoryMeta story={story} />
+          <CoverImage>{image ? <Image src={image} /> : <div />}</CoverImage>
 
-      <Markdown
-        source={story.body}
-        skipHtml={false}
-        escapeHtml={false}
-        disallowedTypes={["image"]}
-      />
+          <Content>
+            <Markdown
+              source={story.body}
+              skipHtml={false}
+              escapeHtml={false}
+              disallowedTypes={["image"]}
+            />
+          </Content>
+        </Grid.Column>
+        <Grid.Column width={5}>
+          <StoryMetaBox story={story} />
+        </Grid.Column>
+      </Grid>
     </Container>
   );
 };

@@ -4,7 +4,7 @@ import client from "dsteem.client";
 import { rejectByTag } from "services/helpers/filter";
 import { graphql } from "react-apollo";
 import gql from "graphql-tag";
-import { Loader } from "semantic-ui-react";
+import Loader from "components/Loader";
 
 import { Grid, Header, Segment, Label } from "semantic-ui-react";
 
@@ -41,7 +41,7 @@ const StoriesScene = props => {
 
 const QUERY = gql`
   {
-    getDiscussions(by: "hot") {
+    getDiscussions(by: "hot", query: { tag: "news" }) {
       id
       title
       body
@@ -56,4 +56,8 @@ const QUERY = gql`
   }
 `;
 
-export default graphql(QUERY)(StoriesScene);
+export default graphql(QUERY, {
+  options: {
+    fetchPolicy: "network-only"
+  }
+})(StoriesScene);
