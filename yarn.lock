@@ -6391,6 +6391,19 @@ style-loader@0.19.0:
     loader-utils "^1.0.2"
     schema-utils "^0.3.0"
 
+styled-components@^2.1.1:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-2.4.0.tgz#086d0fd483d54638837fca3ea546a030b94adf75"
+  dependencies:
+    buffer "^5.0.3"
+    css-to-react-native "^2.0.3"
+    fbjs "^0.8.9"
+    hoist-non-react-statics "^1.2.0"
+    is-plain-object "^2.0.1"
+    prop-types "^15.5.4"
+    stylis "^3.4.0"
+    supports-color "^3.2.3"
+
 styled-components@^3.1.4:
   version "3.1.4"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-3.1.4.tgz#1bdc1409c9bacafee3510c573d23b73039b0d875"
@@ -6404,6 +6417,10 @@ styled-components@^3.1.4:
     stylis "^3.4.0"
     stylis-rule-sheet "^0.0.7"
     supports-color "^3.2.3"
+
+styled-normalize@^2.2.1:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/styled-normalize/-/styled-normalize-2.3.0.tgz#0ab118085955d37ec03c5c418032bfd68ad649d6"
 
 stylis-rule-sheet@^0.0.7:
   version "0.0.7"
@@ -6756,6 +6773,14 @@ universalify@^0.1.0:
 unpipe@1.0.0, unpipe@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
+
+unstyled@^0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/unstyled/-/unstyled-0.0.12.tgz#b24e9b5a5dd4be4976b43ba3f2807220393b44ab"
+  dependencies:
+    react "^16.2.0"
+    styled-components "^2.1.1"
+    styled-normalize "^2.2.1"
 
 unzip-response@^2.0.1:
   version "2.0.1"
