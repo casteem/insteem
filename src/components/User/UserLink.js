@@ -17,7 +17,7 @@ const UserImage = styled.div`
   background-image: url(${props => props.image});
   background-size: cover;
   margin-right: 0.75rem;
-  vertical-align: middle
+  vertical-align: middle;
 `;
 
 const UserLink = ({ user }) => {
@@ -25,7 +25,7 @@ const UserLink = ({ user }) => {
     <Link to={`/@${user.name}`}>
       <UserImage image={user.profile.profile_image} />
       {user.name}
-      <ReputationLabel reputation={user.reputation} />
+      {/*<ReputationLabel reputation={user.reputation} />*/}
     </Link>
   );
 };
