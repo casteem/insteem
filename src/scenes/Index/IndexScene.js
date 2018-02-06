@@ -6,8 +6,9 @@ import { graphql } from "react-apollo";
 import gql from "graphql-tag";
 import Loader from "components/Loader";
 
-import { Grid, Header, Segment, Label } from "semantic-ui-react";
+import { Divider, Grid, Header, Segment, Label } from "semantic-ui-react";
 
+import FeaturedBox from "./components/FeaturedBox";
 import StoryList from "components/StoryList";
 
 const StoriesScene = props => {
@@ -20,7 +21,7 @@ const StoriesScene = props => {
       </Grid.Column>
       <Grid.Column width={6}>
         <Header attached="top">How to</Header>
-        <Segment attached>
+        <Segment attached="bottom">
           <ul>
             <li>Go to steemit.com</li>
             <li>Create a new post</li>
@@ -34,6 +35,7 @@ const StoriesScene = props => {
             <li>Use at least one of the tags from the main menu</li>
           </ul>
         </Segment>
+        <FeaturedBox />
       </Grid.Column>
     </Grid>
   );
