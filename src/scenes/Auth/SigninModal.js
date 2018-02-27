@@ -29,7 +29,7 @@ class SignInModal extends React.Component {
         onClose={this.handleClose}
         trigger={<span onClick={this.handleOpen}> Sign In </span>}
       >
-        <Modal.Header>Sign In to SteemJ</Modal.Header>
+        <Modal.Header>Sign In to Insteem</Modal.Header>
         <Modal.Content image>
           <Modal.Description style={{ width: "inherit" }}>
             <SigninScene handleClose={this.handleClose} />
