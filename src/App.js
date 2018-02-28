@@ -17,6 +17,7 @@ import MainMenu from "components/Menu/MainMenu";
 import CategoryMenu from "components/Menu/CategoryMenu";
 import ProfileScene from "scenes/Profile/ProfileScene";
 import MentionsScene from "scenes/Mentions/MentionsScene";
+import JournalistsScene from "scenes/Journalists/JournalistsScene";
 
 let { store, persistor } = configureStore();
 
@@ -33,6 +34,11 @@ class App extends Component {
                 <Container>
                   <Route exact path="/@:username" component={ProfileScene} />
                   <Route exact path="/" component={IndexScene} />
+                  <Route
+                    exact
+                    path="/journalists"
+                    component={JournalistsScene}
+                  />
                   <Route exact path="/signin" component={SigninScene} />
                   <Route
                     exact

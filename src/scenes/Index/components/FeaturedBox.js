@@ -4,6 +4,7 @@ import gql from "graphql-tag";
 import { map } from "ramda";
 import { Segment, Header } from "semantic-ui-react";
 import UserLink from "components/User/UserLink";
+import { Link } from "react-router-dom";
 
 // Render provided users.
 const renderUsers = map(user => <UserLink key={user.id} user={user} />);
@@ -15,7 +16,10 @@ const FeaturedBox = props => {
   return (
     <div>
       <Header attached="top">Featured</Header>
-      <Segment attached="bottom">{renderUsers(users)}</Segment>
+      <Segment attached>{renderUsers(users)}</Segment>
+      <Segment attached="bottom">
+        <Link to="/journalists">All</Link>
+      </Segment>
     </div>
   );
 };
