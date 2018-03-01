@@ -88,7 +88,7 @@ const renderJournalists = map(user => (
           href={`https://steemit.com/@${user.name}`}
           target="_blank"
         >
-          Profile on Steemit
+          Blog on Steemit
         </Button>
         <Label.Group size="mini">{renderTags(user.tags)}</Label.Group>
       </Item.Extra>
@@ -100,7 +100,7 @@ const JournalistsScene = () => {
   return (
     <Grid centered columns={1}>
       <Grid.Column>
-        <Header>Journalists on Steem</Header>
+        <Header>Journalists on Steem (Approved)</Header>
 
         <Item.Group divided>{renderJournalists(journalists)}</Item.Group>
 
