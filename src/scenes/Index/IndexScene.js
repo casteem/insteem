@@ -45,6 +45,6 @@ const QUERY = gql`
 
 export default graphql(QUERY, {
   options: {
-    fetchPolicy: "network-only"
+    pollInterval: 1000 * 60 * 5 // 5 min
   }
 })(StoriesScene);
