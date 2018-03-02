@@ -30,12 +30,12 @@ const StoryListItem = props => {
           {story.title}
         </Item.Header>
 
-        <Meta story={story} />
 
-        <Item.Description>
+        <Item.Description style={{ fontSize: "1.1rem" }}>
           <Body body={story.body} />
         </Item.Description>
 
+        {/*<Meta story={story} />*/}
         <Extra story={story} />
       </Item.Content>
     </Item>

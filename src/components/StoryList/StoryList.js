@@ -8,7 +8,7 @@ const StoryList = props => {
   const { stories } = props;
 
   return (
-    <Item.Group divided>
+    <Item.Group relaxed divided>
       {map(story => <StoryListItem key={story.id} story={story} />)(stories)}
     </Item.Group>
   );
