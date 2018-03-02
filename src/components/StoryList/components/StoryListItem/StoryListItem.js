@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Item } from "semantic-ui-react";
 import removeMarkdown from "remove-markdown";
 
+import Body from "./components/StoryListItemBody";
 import Meta from "./components/StoryListItemMeta";
 import Extra from "./components/StoryListItemExtra";
 
@@ -31,15 +32,8 @@ const StoryListItem = props => {
 
         <Meta story={story} />
 
-        <Item.Description
-          style={{
-            fontSize: "1.15rem",
-            overflow: "hidden",
-            whiteSpace: "nowrap",
-            textOverflow: "ellipsis"
-          }}
-        >
-          {text} <br />
+        <Item.Description>
+          <Body body={story.body} />
         </Item.Description>
 
         <Extra story={story} />
