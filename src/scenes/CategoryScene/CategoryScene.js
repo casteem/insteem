@@ -1,17 +1,28 @@
 import React from "react";
-import { lifecycle } from "recompose";
 import StoryList from "components/StoryList/StoryList";
 import { rejectByTag } from "services/helpers/filter";
 import { graphql } from "react-apollo";
 import gql from "graphql-tag";
-import { Loader } from "semantic-ui-react";
+import { Loader, Grid } from "semantic-ui-react";
+import HowToBox from "components/Layout/HowToBox";
+import FeaturedBox from "scenes/Index/components/FeaturedBox";
 
 const CategoryScene = props => {
   let { data: { loading, getDiscussions: stories } } = props;
   if (loading) return <Loader active />;
   // Hide `nsfw` stories.
   stories = rejectByTag(stories, "nsfw");
-  return <div>{<StoryList stories={stories || []} />}</div>;
+  return (
+    <Grid>
+      <Grid.Column width={10}>
+        {<StoryList stories={stories || []} />}
+      </Grid.Column>
+      <Grid.Column width={6}>
+        <HowToBox />
+        <FeaturedBox />
+      </Grid.Column>
+    </Grid>
+  );
 };
 
 const QUERY = gql`

@@ -1,15 +1,14 @@
 import React from "react";
-import { lifecycle } from "recompose";
-import client from "dsteem.client";
 import { rejectByTag } from "services/helpers/filter";
 import { graphql } from "react-apollo";
 import gql from "graphql-tag";
 import Loader from "components/Loader";
 
-import { Divider, Grid, Header, Segment, Label } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 
 import FeaturedBox from "./components/FeaturedBox";
 import StoryList from "components/StoryList";
+import HowToBox from "components/Layout/HowToBox";
 
 const StoriesScene = props => {
   const { data: { loading, getDiscussions: stories } } = props;
@@ -20,21 +19,7 @@ const StoriesScene = props => {
         <StoryList stories={stories || []} />
       </Grid.Column>
       <Grid.Column width={6}>
-        <Header attached="top">How to</Header>
-        <Segment attached="bottom">
-          <ul>
-            <li>Go to steemit.com</li>
-            <li>Create a new post</li>
-            <li>
-              Use{" "}
-              <Label color="blue" basic>
-                news
-              </Label>{" "}
-              as the first tag for now
-            </li>
-            <li>Use at least one of the tags from the main menu</li>
-          </ul>
-        </Segment>
+        <HowToBox />
         <FeaturedBox />
       </Grid.Column>
     </Grid>
