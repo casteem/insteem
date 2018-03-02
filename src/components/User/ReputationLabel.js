@@ -1,6 +1,5 @@
 import React from "react";
 import steem from "steem";
-import styled from "styled-components";
 import { Label as UnstyledLabel } from "unstyled";
 
 const Label = UnstyledLabel.extend`

@@ -2,9 +2,6 @@ import React from "react";
 import { Grid, Header, Label, Item, Button } from "semantic-ui-react";
 import { map } from "ramda";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
-
-import UserLink from "components/User/UserLink";
 
 const journalists = [
   {

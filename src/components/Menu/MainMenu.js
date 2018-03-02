@@ -20,7 +20,6 @@ const MainMenu = props => {
     <Menu borderless stackable fixed="top" style={styles.menu} size="large">
       <Container>
         <Menu.Item as={Link} to={"/"}>
-          {/*<img src="/insteem.png" alt="" />*/}
           <Image
             inline
             style={{ height: 30, width: 30 }}
@@ -31,7 +30,7 @@ const MainMenu = props => {
           <span style={styles.brand}>
             INSTEEM <span style={styles.brand.beta}>beta</span>
           </span>
-          <Title>Decentralized News by Independent Journalists.</Title>
+          <Title>Decentralized News by Independent Journalists</Title>
         </Menu.Item>
         {/*<Menu.Item as={Link} to="/comments">*/}
         {/*Comments*/}

@@ -14,7 +14,11 @@ const HowToBox = props => {
         <ul>
           <LI>
             Go to{" "}
-            <a href="https://steemit.com" target="_blank">
+            <a
+              href="https://steemit.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               steemit.com
             </a>
           </LI>

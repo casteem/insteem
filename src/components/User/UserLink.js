@@ -2,8 +2,6 @@ import React from "react";
 import { Link as ReactLink } from "react-router-dom";
 import styled from "styled-components";
 
-import ReputationLabel from "components/User/ReputationLabel";
-
 const Link = styled(ReactLink)`
   display: block;
   margin-bottom: 0.5rem;

@@ -6,12 +6,10 @@ import { contains, reject } from "ramda";
 export const containsTag = (json, tag = "") => {
   const activeTags = parseMetadata(json).tags;
   const bool = contains(tag, activeTags);
-  console.log(bool);
   return bool;
 };
 
 export const rejectByTag = (stories, tags = []) => {
-  console.log(tags);
   stories = reject(story => containsTag(story.json_metadata, tags))(stories);
   return stories;
 };

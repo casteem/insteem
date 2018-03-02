@@ -1,6 +1,5 @@
 import React from "react";
-import { head, isNil } from "ramda";
-import moment from "moment";
+import { isNil } from "ramda";
 import { userImage } from "services/helpers/format";
 import { graphql } from "react-apollo";
 import gql from "graphql-tag";
@@ -9,8 +8,7 @@ import steem from "steem";
 import Loader from "../../components/Loader";
 import ProfileDetails from "components/Profile/components/ProfileDetails";
 import StoryList from "components/StoryList/StoryList";
-// import FavoriteButton from "../../components/Favorites/components/FavoriteButton";
-import { Icon, Image, Label } from "semantic-ui-react";
+import { Image, Label } from "semantic-ui-react";
 // import ExternalLink from "components/Elements/ExternalLink";
 
 class ProfileScene extends React.Component {

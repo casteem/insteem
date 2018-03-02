@@ -4,8 +4,7 @@ import { connect } from "react-redux";
 import { signout } from "services/state/auth/actions";
 import { graphql } from "react-apollo";
 import gql from "graphql-tag";
-import Loader from "components/Loader";
-import { Dropdown, Menu, Button, Image } from "semantic-ui-react";
+import { Dropdown, Menu, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { userImage } from "services/helpers/format";
 

@@ -16,7 +16,7 @@ const StoriesScene = props => {
   return (
     <Grid>
       <Grid.Column width={10}>
-        <StoryList stories={stories || []} />
+        <StoryList stories={rejectByTag(stories, "nsfw") || []} />
       </Grid.Column>
       <Grid.Column width={6}>
         <HowToBox />
