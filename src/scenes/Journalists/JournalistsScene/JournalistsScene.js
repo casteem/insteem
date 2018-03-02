@@ -31,10 +31,10 @@ const journalists = [
     desc:
       "An online media team from Washington. Range from" +
       "  local, national to international politics",
-    tags: ["politics"]
+    tags: ["politics", "technology"]
   },
   {
-    name: "occupation",
+    name: "ocupation",
     desc:
       "Writes about everything that comes to his mind," +
       " gaming, conspiracy, photography, health and so on.",
@@ -53,6 +53,18 @@ const journalists = [
       "Blogger and crypto expert. Covers a wide" +
       " spectrum from politics, technology up to food.",
     tags: ["politics", "technology", "life"]
+  },
+  {
+    name: "adamcarter",
+    desc: "Writes about technical stuff at Disobedient" + " Media.",
+    tags: ["technology"]
+  },
+  {
+    name: "leecamp",
+    desc:
+      'Journalist from Washington. Host of "Redacted' +
+      ' Tonight", a comedy show on Youtube (so far).',
+    tags: ["comedy", "politics", "life"]
   }
 ];
 
@@ -70,7 +82,7 @@ const blockedJournalists = [
 const renderTags = map(label => <Label color="green">{label}</Label>);
 
 const renderJournalists = map(user => (
-  <Item>
+  <Item key={user.name}>
     <Item.Content>
       <Item.Header as={Link} to={`/@${user.name}`}>
         {user.name}
