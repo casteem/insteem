@@ -69,7 +69,7 @@ const journalists = [
   {
     name: "greenmask9",
     desc:
-      "	New author from the Czech Republik. Covers health," +
+      "	New author from the Czech Republic. Covers health," +
       " psychology, sports and politics.",
     tags: ["health", "politics", "sports", " psychology"]
   },
