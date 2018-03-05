@@ -77,7 +77,7 @@ const journalists = [
     name: "eleanorgoldfield",
     desc:
       "Socio-political engaged activist," +
-      " journalist and poet from Washington. Hosts the daily show `Act out`",
+      " journalist and poet from Washington. Hosts the daily show `Act out.`",
     tags: ["politics", "science"]
   }
 ];
