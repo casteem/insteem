@@ -72,6 +72,13 @@ const journalists = [
       "	New author from the Czech Republik. Covers health," +
       " psychology, sports and politics.",
     tags: ["health", "politics", "sports", " psychology"]
+  },
+  {
+    name: "eleanorgoldfield",
+    desc:
+      "Socio-political engaged activist," +
+      " journalist and poet from Washington. Hosts the daily show `Act out`",
+    tags: ["politics", "science"]
   }
 ];
 
