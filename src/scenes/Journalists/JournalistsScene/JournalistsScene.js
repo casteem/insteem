@@ -67,7 +67,7 @@ const journalists = [
     tags: ["comedy", "politics", "life"]
   },
   {
-    name: greenmask,
+    name: "greenmask",
     desc:
       "	New author from the Czech Republik. Covers health," +
       " psychology, sports and politics.",
