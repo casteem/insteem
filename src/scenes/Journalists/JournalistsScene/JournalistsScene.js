@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Header, Label, Item, Button } from "semantic-ui-react";
+import { Grid, Header, Label, Card, Button, Icon } from "semantic-ui-react";
 import { map } from "ramda";
 import { Link } from "react-router-dom";
 
@@ -93,30 +93,35 @@ const blockedJournalists = [
   }
 ];
 
-const renderTags = map(label => <Label color="green">{label}</Label>);
+const renderTags = map(label => (
+  <Label key={label} color="green">
+    {label}
+  </Label>
+));
 
 const renderJournalists = map(user => (
-  <Item key={user.name}>
-    <Item.Content>
-      <Item.Header as={Link} to={`/@${user.name}`}>
+  <Card key={user.name}>
+    <Card.Content>
+      <Card.Header as={Link} to={`/@${user.name}`}>
         {user.name}
-      </Item.Header>
-      <Item.Description>{user.desc}</Item.Description>
-      <Item.Extra>
-        <Button
-          floated="right"
-          size="tiny"
-          color="blue"
-          as="a"
-          href={`https://steemit.com/@${user.name}`}
-          target="_blank"
-        >
-          Blog on Steemit
-        </Button>
-        <Label.Group size="mini">{renderTags(user.tags)}</Label.Group>
-      </Item.Extra>
-    </Item.Content>
-  </Item>
+      </Card.Header>
+      <Card.Description>{user.desc}</Card.Description>
+    </Card.Content>
+    <Card.Content extra>
+      <Button
+        icon
+        floated="right"
+        size="tiny"
+        color="blue"
+        as="a"
+        href={`https://steemit.com/@${user.name}`}
+        target="_blank"
+      >
+        <Icon name="external share" />
+      </Button>
+      <Label.Group size="small">{renderTags(user.tags)}</Label.Group>
+    </Card.Content>
+  </Card>
 ));
 
 const JournalistsScene = () => {
@@ -125,10 +130,12 @@ const JournalistsScene = () => {
       <Grid.Column>
         <Header>Journalists on Steem (Approved)</Header>
 
-        <Item.Group divided>{renderJournalists(journalists)}</Item.Group>
+        <Card.Group itemsPerRow={3}>
+          {renderJournalists(journalists)}
+        </Card.Group>
 
         <Header>Unapproved Journalists </Header>
-        <Item.Group divided>{renderJournalists(blockedJournalists)}</Item.Group>
+        <Card.Group divided>{renderJournalists(blockedJournalists)}</Card.Group>
       </Grid.Column>
     </Grid>
   );
