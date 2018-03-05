@@ -1,10 +1,11 @@
-#Insteem - The News on Steem
+# Insteem - The News on Steem
 
 Insteem rewards independant journalists on steem.
 
 ## Insteem Web/App
-This is the web frontend for the Insteem project. 
-For the mobile app see: [insteem-app](https://github.com/Insteem/insteem-app) 
+
+This is the web frontend for the Insteem project.
+For the mobile app see: [insteem-app](https://github.com/Insteem/insteem-app)
 
 ## Mission
 
@@ -13,6 +14,7 @@ Insteem will become the platform and community for independent journalismn on st
 ## Ideas
 
 Ideas:
+
 * Dedicated Web and Mobile Apps (Insteem and Insteem Mobile, something similar to utopian-ui)
 * Curation Trails
 * BidBot for news stories
