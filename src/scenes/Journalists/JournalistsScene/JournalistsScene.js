@@ -65,6 +65,13 @@ const journalists = [
       'Journalist from Washington. Host of "Redacted' +
       ' Tonight", a comedy show on Youtube (so far).',
     tags: ["comedy", "politics", "life"]
+  },
+  {
+    name: greenmask,
+    desc:
+      "	New author from the Czech Republik. Covers health," +
+      " psychology, sports and politics.",
+    tags: ["health", "politics", "sports", " psychology"]
   }
 ];
 
