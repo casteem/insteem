@@ -52,7 +52,7 @@ const TeamScene = props => {
               @lilyraabe
             </a>
           </Name>
-          <Desc>Senior Editor</Desc>
+          <Desc>Senior Editor (Arts)</Desc>
         </User>
       </Row>
       <Row>
