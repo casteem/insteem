@@ -135,7 +135,7 @@ const JournalistsScene = () => {
         </Card.Group>
 
         <Header>Unapproved Journalists </Header>
-        <Card.Group divided>{renderJournalists(blockedJournalists)}</Card.Group>
+        <Card.Group>{renderJournalists(blockedJournalists)}</Card.Group>
       </Grid.Column>
     </Grid>
   );
