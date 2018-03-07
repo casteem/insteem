@@ -20,7 +20,11 @@ const Image = styled.img`
   border-radius: 1rem;
 `;
 const Name = styled.h2``;
-const Desc = styled.p``;
+const Desc = styled.p`
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+`;
+const Categories = styled.p``;
 
 const TeamScene = props => {
   return (
@@ -35,6 +39,7 @@ const TeamScene = props => {
             </a>
           </Name>
           <Desc>Chief Editor</Desc>
+          <Categories>Technology, Business, Sports</Categories>
         </User>
         <User>
           <Image src="https://steemitimages.com/u/eroche/avatar/large" />
@@ -44,6 +49,7 @@ const TeamScene = props => {
             </a>
           </Name>
           <Desc>Senior Editor</Desc>
+          <Categories>Travel, Crypto, Science</Categories>
         </User>
         <User>
           <Image src="https://steemitimages.com/u/lilyraabe/avatar/large" />
@@ -52,7 +58,8 @@ const TeamScene = props => {
               @lilyraabe
             </a>
           </Name>
-          <Desc>Senior Editor (Arts)</Desc>
+          <Desc>Senior Editor</Desc>
+          <Categories>Arts</Categories>
         </User>
       </Row>
       <Row>
@@ -64,6 +71,7 @@ const TeamScene = props => {
             </a>
           </Name>
           <Desc>Editor</Desc>
+          <Categories>Business, Technology</Categories>
         </User>
         <User>
           <Image src="https://steemitimages.com/u/cyberwarrior/avatar/large" />
@@ -73,6 +81,7 @@ const TeamScene = props => {
             </a>
           </Name>
           <Desc>Editor</Desc>
+          <Categories>Politics, Technology, Crypto</Categories>
         </User>
       </Row>
     </Container>
