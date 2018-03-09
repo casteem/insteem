@@ -5,6 +5,25 @@ import { Link } from "react-router-dom";
 
 const journalists = [
   {
+    name: "adamcarter",
+    desc: "Writes about technical stuff at Disobedient" + " Media.",
+    tags: ["technology"]
+  },
+  {
+    name: "cyberwarrior",
+    desc:
+      "Blogger and crypto expert. Covers a wide" +
+      " spectrum from politics, technology up to food.",
+    tags: ["politics", "technology", "life"]
+  },
+  {
+    name: "eleanorgoldfield",
+    desc:
+      "Socio-political engaged activist," +
+      " journalist and poet from Washington. Hosts the daily show `Act out.`",
+    tags: ["politics", "science"]
+  },
+  {
     name: "elizbethleavos",
     desc:
       "Independent journalists" +
@@ -20,11 +39,25 @@ const journalists = [
     tags: ["cryptocurrency", "money", "china"]
   },
   {
+    name: "greenmask9",
+    desc:
+      "	New author from the Czech Republic. Covers health," +
+      " psychology, sports and politics.",
+    tags: ["health", "politics", "sports", " psychology"]
+  },
+  {
     name: "joshsigurdson",
     desc:
       'Journalist at World Alternative Media. Does video" +\n' +
       '    " interviews on DTube, talks about money, crypto and business.',
     tags: ["business", "politics", "cryptocurrency"]
+  },
+  {
+    name: "leecamp",
+    desc:
+      'Journalist from Washington. Host of "Redacted' +
+      ' Tonight", a comedy show on Youtube (so far).',
+    tags: ["comedy", "politics", "life"]
   },
   {
     name: "news2share",
@@ -48,37 +81,11 @@ const journalists = [
     tags: ["politics", "war", "ukraine"]
   },
   {
-    name: "cyberwarrior",
+    name: "travelwithus",
     desc:
-      "Blogger and crypto expert. Covers a wide" +
-      " spectrum from politics, technology up to food.",
-    tags: ["politics", "technology", "life"]
-  },
-  {
-    name: "adamcarter",
-    desc: "Writes about technical stuff at Disobedient" + " Media.",
-    tags: ["technology"]
-  },
-  {
-    name: "leecamp",
-    desc:
-      'Journalist from Washington. Host of "Redacted' +
-      ' Tonight", a comedy show on Youtube (so far).',
-    tags: ["comedy", "politics", "life"]
-  },
-  {
-    name: "greenmask9",
-    desc:
-      "	New author from the Czech Republic. Covers health," +
-      " psychology, sports and politics.",
-    tags: ["health", "politics", "sports", " psychology"]
-  },
-  {
-    name: "eleanorgoldfield",
-    desc:
-      "Socio-political engaged activist," +
-      " journalist and poet from Washington. Hosts the daily show `Act out.`",
-    tags: ["politics", "science"]
+      "Young family traveling the world and reporting their adventures" +
+      " while conquering new countries.|",
+    tags: ["travel", "life", "photography"]
   }
 ];
 
