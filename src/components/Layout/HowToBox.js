@@ -13,16 +13,9 @@ const HowToBox = props => {
       <Segment attached="bottom">
         <ul>
           <LI>
-            Go to{" "}
-            <a
-              href="https://steemit.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              steemit.com
-            </a>
+            Write your story on the steem frontend of your choice. Posting will
+            be coming soon.
           </LI>
-          <LI>Create a new post</LI>
           <LI>
             Use{" "}
             <Label color="blue" basic>
