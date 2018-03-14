@@ -19,6 +19,7 @@ const CategoryScene = props => {
       </Grid.Column>
       <Grid.Column width={6}>
         <HowToBox />
+        <br />
         <FeaturedBox />
       </Grid.Column>
     </Grid>

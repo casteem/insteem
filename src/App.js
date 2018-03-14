@@ -9,6 +9,7 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/lib/integration/react";
 import configureStore from "services/state/store";
 
+import Layout from "scenes/Layout/Layout";
 import IndexScene from "scenes/Index/IndexScene";
 import SigninScene from "scenes/Auth/SigninScene/Signin.scene";
 import StoryScene from "scenes/StoryScene";
@@ -29,36 +30,38 @@ class App extends Component {
         <PersistGate loading={null} persistor={persistor}>
           <ApolloProvider client={client}>
             <Router>
-              <div className="App">
-                <MainMenu />
-                <CategoryMenu />
-                <Container>
-                  <Route exact path="/@:username" component={ProfileScene} />
-                  <Route exact path="/" component={IndexScene} />
-                  <Route
-                    exact
-                    path="/journalists"
-                    component={JournalistsScene}
-                  />
-                  <Route exact path="/team" component={TeamScene} />
-                  <Route exact path="/signin" component={SigninScene} />
-                  <Route
-                    exact
-                    path="/categories/:category"
-                    component={CategoryScene}
-                  />
-                  <Route
-                    exact
-                    path="/stories/:author/:permlink"
-                    component={StoryScene}
-                  />
-                  <Route
-                    exact
-                    path="/mentions/@:username/:page?"
-                    component={MentionsScene}
-                  />
-                </Container>
-              </div>
+              <Layout>
+                <div className="App">
+                  <MainMenu />
+                  <CategoryMenu />
+                  <Container>
+                    <Route exact path="/@:username" component={ProfileScene} />
+                    <Route exact path="/" component={IndexScene} />
+                    <Route
+                      exact
+                      path="/journalists"
+                      component={JournalistsScene}
+                    />
+                    <Route exact path="/team" component={TeamScene} />
+                    <Route exact path="/signin" component={SigninScene} />
+                    <Route
+                      exact
+                      path="/categories/:category"
+                      component={CategoryScene}
+                    />
+                    <Route
+                      exact
+                      path="/stories/:author/:permlink"
+                      component={StoryScene}
+                    />
+                    <Route
+                      exact
+                      path="/mentions/@:username/:page?"
+                      component={MentionsScene}
+                    />
+                  </Container>
+                </div>
+              </Layout>
             </Router>
           </ApolloProvider>
         </PersistGate>

@@ -40,12 +40,7 @@ const QUERY = gql`
 export default graphql(QUERY, {
   options: {
     variables: {
-      usernames: [
-        "elizbethleavos",
-        "joshsigurdson",
-        "patricklancaster",
-        "sarasate"
-      ]
+      usernames: ["johnvibes", "lilyraabe", "leecamp", "patricklancaster"]
     }
   }
 })(FeaturedBox);
