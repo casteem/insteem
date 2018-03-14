@@ -23,6 +23,7 @@ class SignInModal extends React.Component {
   render() {
     return (
       <Modal
+        style={{ margin: "auto", marginTop: 100 }}
         size="small"
         dimmer="blurring"
         open={this.state.modalOpen}
