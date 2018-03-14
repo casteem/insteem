@@ -7,9 +7,13 @@
     "apollo-client": "^2.2.0",
     "apollo-link-http": "^1.5.1",
     "dsteem": "^0.8.6",
+    "embedjs": "^0.0.10",
     "graphql": "^0.13.1",
     "graphql-tag": "^2.6.1",
+    "highlight.js": "^9.12.0",
+    "lodash": "^4.17.5",
     "moment": "^2.20.1",
+    "prop-types": "^15.6.1",
     "ramda": "^0.25.0",
     "react": "^16.2.0",
     "react-apollo": "^2.0.4",
@@ -32,7 +36,8 @@
     "styled-components": "^3.1.4",
     "styled-normalize": "^4.0.0",
     "text-ellipsis": "^1.0.3",
-    "unstyled": "^0.0.13"
+    "unstyled": "^0.0.13",
+    "xmldom": "^0.1.27"
   },
   "scripts": {
     "start": "react-scripts start",

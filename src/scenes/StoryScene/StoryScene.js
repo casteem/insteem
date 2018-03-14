@@ -7,6 +7,7 @@ import Markdown from "react-markdown";
 import { parseMetadata } from "services/helpers/format";
 import styled from "styled-components";
 
+import StoryBody from "./components/StoryBody";
 import StoryMeta from "./components/StoryMeta";
 import StoryMetaBox from "./components/StoryMetaBox";
 
@@ -37,15 +38,16 @@ const StoryScene = props => {
           <Header>{story.title}</Header>
 
           <StoryMeta story={story} />
-          <CoverImage>{image ? <Image src={image} /> : <div />}</CoverImage>
+          {/*<CoverImage>{image ? <Image src={image} /> : <div />}</CoverImage>*/}
 
           <Content>
-            <Markdown
-              source={story.body}
-              skipHtml={false}
-              escapeHtml={false}
-              disallowedTypes={["image"]}
-            />
+            <StoryBody body={story.body} />
+            {/*<Markdown*/}
+            {/*source={story.body}*/}
+            {/*skipHtml={false}*/}
+            {/*escapeHtml={false}*/}
+            {/*disallowedTypes={["image"]}*/}
+            {/*/>*/}
           </Content>
         </Grid.Column>
         <Grid.Column width={5}>
@@ -59,6 +61,7 @@ const StoryScene = props => {
 export default lifecycle({
   componentWillMount() {
     const { author, permlink } = this.props.match.params;
+    console.log(author, permlink);
     client.database
       .getDiscussions("created", {
         limit: 1,
