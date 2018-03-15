@@ -12,6 +12,8 @@ const AboutBox = () => {
         Insteem will become a decentralised, rewarding news platform for
         independent journalism and create an international network of
         journalists, away from MSM.
+        <br />
+        <Link to="/rules">Rules</Link>
       </Segment>
     </div>
   );

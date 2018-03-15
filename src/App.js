@@ -20,7 +20,8 @@ import ProfileScene from "scenes/Profile/ProfileScene";
 import MentionsScene from "scenes/Mentions/MentionsScene";
 import JournalistsScene from "scenes/Journalists/JournalistsScene";
 import TeamScene from "scenes/Team/TeamScene/TeamScene";
-import AboutScene from 'scenes/Static/AboutScene'
+import AboutScene from "scenes/Static/AboutScene";
+import RulesScene from "scenes/Static/RulesScene";
 
 let { store, persistor } = configureStore();
 
@@ -43,7 +44,8 @@ class App extends Component {
                       path="/journalists"
                       component={JournalistsScene}
                     />
-                    <Route exact path='/about' component={AboutScene}/>
+                    <Route exact path="/about" component={AboutScene} />
+                    <Route exact path="/rules" component={RulesScene} />
                     <Route exact path="/team" component={TeamScene} />
                     <Route exact path="/signin" component={SigninScene} />
                     <Route
