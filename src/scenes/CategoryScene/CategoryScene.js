@@ -6,6 +6,7 @@ import gql from "graphql-tag";
 import { Loader, Grid } from "semantic-ui-react";
 import HowToBox from "components/Layout/HowToBox";
 import FeaturedBox from "scenes/Index/components/FeaturedBox";
+import AboutBox from "components/Layout/AboutBox";
 
 const CategoryScene = props => {
   let { data: { loading, getDiscussions: stories } } = props;
@@ -21,6 +22,8 @@ const CategoryScene = props => {
         <HowToBox />
         <br />
         <FeaturedBox />
+        <br />
+        <AboutBox />
       </Grid.Column>
     </Grid>
   );

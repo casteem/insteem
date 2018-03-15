@@ -9,6 +9,7 @@ import { Grid } from "semantic-ui-react";
 import FeaturedBox from "./components/FeaturedBox";
 import StoryList from "components/StoryList";
 import HowToBox from "components/Layout/HowToBox";
+import AboutBox from "components/Layout/AboutBox";
 
 const StoriesScene = props => {
   const { data: { loading, getDiscussions: stories } } = props;
@@ -22,6 +23,8 @@ const StoriesScene = props => {
         <HowToBox />
         <br />
         <FeaturedBox />
+        <br />
+        <AboutBox />
       </Grid.Column>
     </Grid>
   );
