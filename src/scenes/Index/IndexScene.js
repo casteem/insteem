@@ -15,7 +15,7 @@ const StoriesScene = props => {
   const { data: { loading, getDiscussions: stories } } = props;
   if (loading) return <Loader />;
   return (
-    <Grid>
+    <Grid stackable>
       <Grid.Column width={10}>
         <StoryList stories={rejectByTag(stories, "nsfw") || []} />
       </Grid.Column>

@@ -27,7 +27,7 @@ const StoryListItem = props => {
   `;
   const Image = styled.div`
     width: 100%; /*or 70%, or what you want*/
-    height: 400px; /*or 70%, or what you want*/
+    height: 300px; /*or 70%, or what you want*/
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

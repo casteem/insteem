@@ -14,7 +14,7 @@ const CategoryScene = props => {
   // Hide `nsfw` stories.
   stories = rejectByTag(stories, "nsfw");
   return (
-    <Grid>
+    <Grid stackable>
       <Grid.Column width={10}>
         {<StoryList stories={stories || []} />}
       </Grid.Column>
