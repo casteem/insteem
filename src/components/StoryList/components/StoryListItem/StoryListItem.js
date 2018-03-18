@@ -19,6 +19,7 @@ const StoryListItem = props => {
     border: 1px solid #d4d4d5;
     margin-bottom: 1rem;
     max-width: 700px;
+    box-shadow: 1px 2px 8px #d4d4d5;
   `;
   const Header = styled.h2`
     padding: 1rem 1rem 0 1rem;
