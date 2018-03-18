@@ -2,7 +2,13 @@
   min-height: 100%;
   background-color: #f9f9f9;
 }
+
 .App {
   padding-top: 45px;
   min-height: 100%;
+}
+
+/* Needed for markdown images for now.*/
+img {
+  width: 100%;
 }

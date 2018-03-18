@@ -21,7 +21,9 @@ const CoverImage = styled.div`
 `;
 
 const Content = styled.div`
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: hsla(0, 0%, 0%, 0.6);
 `;
 
 const StoryScene = props => {

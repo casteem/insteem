@@ -37,6 +37,10 @@ const StoryListItem = props => {
   `;
   const Text = styled.div`
     padding: 1rem;
+    color: hsla(0, 0%, 0%, 0.7);
+    font-size: 16px;
+    margin-bottom: 1rem;
+    line-height: 1.5;
   `;
   const Extra = styled.div`
     padding: 0 1rem 1rem 1rem;
@@ -56,7 +60,7 @@ const StoryListItem = props => {
         </Link>
       ) : null}
 
-      <Text style={{ fontSize: "1.1rem", marginBottom: "1rem" }}>
+      <Text>
         <Body body={story.body} />
       </Text>
 
