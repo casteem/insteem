@@ -31,6 +31,7 @@ const StoryListItem = props => {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: #f9f9f9;
     background-image: url(${({ src }) => src});
   `;
   const Text = styled.div`
