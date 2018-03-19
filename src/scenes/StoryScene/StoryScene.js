@@ -65,7 +65,8 @@ export default lifecycle({
     const { author, permlink } = this.props.match.params;
     console.log(author, permlink);
     client.database
-      .getDiscussions("created", {
+      .getDiscussions("blog", {
+        tag: author,
         limit: 1,
         start_author: author,
         start_permlink: permlink
