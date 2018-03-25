@@ -4,17 +4,26 @@ import { rejectByTag } from "services/helpers/filter";
 import { graphql } from "react-apollo";
 import gql from "graphql-tag";
 import { Loader, Grid } from "semantic-ui-react";
+
+import Meta from "components/Meta";
 import HowToBox from "components/Layout/HowToBox";
 import FeaturedBox from "scenes/Index/components/FeaturedBox";
 import AboutBox from "components/Layout/AboutBox";
 
 const CategoryScene = props => {
-  let { data: { loading, getDiscussions: stories } } = props;
+  let { data: { loading, getDiscussions: stories }, match } = props;
   if (loading) return <Loader active />;
   // Hide `nsfw` stories.
   stories = rejectByTag(stories, "nsfw");
   return (
     <Grid stackable>
+      <Meta
+        data={{
+          title:
+            match.params.category[0].toUpperCase() +
+            match.params.category.slice(1)
+        }}
+      />
       <Grid.Column width={10}>
         {<StoryList stories={stories || []} />}
       </Grid.Column>

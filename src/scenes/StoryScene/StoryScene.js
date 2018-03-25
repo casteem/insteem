@@ -7,6 +7,7 @@ import Markdown from "react-markdown";
 import { parseMetadata } from "services/helpers/format";
 import styled from "styled-components";
 
+import Meta from "components/Meta";
 import StoryBody from "./components/StoryBody";
 import StoryMeta from "./components/StoryMeta";
 import StoryMetaBox from "./components/StoryMetaBox";
@@ -35,6 +36,7 @@ const StoryScene = props => {
   const image = head(images);
   return (
     <Container>
+      <Meta data={story} />
       <Grid>
         <Grid.Column width={11}>
           <Header>{story.title}</Header>
