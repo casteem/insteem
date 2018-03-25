@@ -3,6 +3,15 @@ import moment from "moment";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+const Item = styled.div`
+  background-color: white;
+  border: 1px solid #d4d4d5;
+  margin-bottom: 1rem;
+  max-width: 700px;
+  box-shadow: 1px 2px 8px #d4d4d5;
+  padding: 1rem;
+`;
+
 const Title = styled(Link)`
   font-weight: bold;
   font-size: 18px;
@@ -20,7 +29,7 @@ const Summary = styled.div`
 const MentionItem = props => {
   const { mention } = props;
   return (
-    <div>
+    <Item>
       <Title to={`/stories/${mention.author}/${mention.permlink}`}>
         {mention.title}
       </Title>
@@ -32,7 +41,7 @@ const MentionItem = props => {
           .fromNow()}
       </Meta>
       <Summary>{mention.summary}...</Summary>
-    </div>
+    </Item>
   );
 };
 

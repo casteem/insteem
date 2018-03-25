@@ -31,6 +31,9 @@ const AccountMenu = props => {
           <Dropdown.Item as={Link} to={`/@${user.name}`}>
             Profile
           </Dropdown.Item>
+          <Dropdown.Item as={Link} to={`/mentions/@${user.name}`}>
+            Mentions
+          </Dropdown.Item>
           <Dropdown.Divider />
           <Dropdown.Item onClick={signout}>Sign Out</Dropdown.Item>
         </Dropdown.Menu>
