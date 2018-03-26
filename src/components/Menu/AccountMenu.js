@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { signout } from "services/state/auth/actions";
 import { graphql } from "react-apollo";
 import gql from "graphql-tag";
-import { Dropdown, Menu, Image } from "semantic-ui-react";
+import { Icon, Dropdown, Menu, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { userImage } from "services/helpers/format";
 
@@ -18,10 +18,8 @@ const AccountMenu = props => {
   }
   return (
     <Menu.Menu position="right">
-      <Menu.Item>
-        {/*<Button primary fluid as={Link} to="/submit">*/}
-        {/*Post new job*/}
-        {/*</Button>*/}
+      <Menu.Item icon as={Link} to="/new">
+        <Icon name="write" color="green" />
       </Menu.Item>
       <Menu.Item>
         <Image avatar inline src={userImage(user)} />

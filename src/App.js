@@ -13,6 +13,7 @@ import Layout from "scenes/Layout/Layout";
 import IndexScene from "scenes/Index/IndexScene";
 import SigninScene from "scenes/Auth/SigninScene/Signin.scene";
 import StoryScene from "scenes/StoryScene";
+import StoryPublishScene from "scenes/Story/StoryPublishScene";
 import CategoryScene from "scenes/CategoryScene/CategoryScene";
 import MainMenu from "components/Menu/MainMenu";
 import CategoryMenu from "components/Menu/CategoryMenu";
@@ -44,6 +45,7 @@ class App extends Component {
                       path="/journalists"
                       component={JournalistsScene}
                     />
+                    <Route exact path="/new" component={StoryPublishScene} />
                     <Route exact path="/about" component={AboutScene} />
                     <Route exact path="/rules" component={RulesScene} />
                     <Route exact path="/team" component={TeamScene} />
