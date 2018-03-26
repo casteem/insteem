@@ -15,12 +15,18 @@ class SignIn extends React.Component {
     };
   }
 
-  signin() {
-    console.log(this.state);
-    const wif = steem.auth.toWif(this.state.username, this.state.password, [
-      "posting"
-    ]);
-    console.log(wif);
+  signin(e) {
+    e.preventDefault();
+    const wif = this.state.password;
+    // const wif = steem.auth.toWif(this.state.username, this.state.password, [
+    //   "posting"
+    // ]);
+    const isWif = steem.auth.isWif(wif);
+    if (!isWif) {
+      alert("Please use a private posting key!");
+      return;
+    }
+
     this.props.onSignin(this.state.username, this.state.password, wif);
   }
 
@@ -28,14 +34,18 @@ class SignIn extends React.Component {
     return (
       <Grid centered>
         <Grid.Column width="6">
-          <Form style={{ padding: 20, textAlign: "center" }}>
-            <Form.Field>
+          <Form
+            style={{ padding: 20, textAlign: "center" }}
+            onSubmit={e => this.signin(e)}
+          >
+            <Form.Field required>
               <Input
                 onChange={event =>
                   this.setState({ username: event.target.value })
                 }
                 value={this.state.username}
                 placeholder="Username"
+                required
               />
             </Form.Field>
             <Form.Field>
@@ -44,17 +54,20 @@ class SignIn extends React.Component {
                   this.setState({ password: event.target.value })
                 }
                 value={this.state.password}
-                placeholder="Password"
+                placeholder="Private Posting Key"
                 type="password"
+                required
               />
             </Form.Field>
-            <Button onClick={e => this.signin(e)}>Signin</Button>
+            <Button type="submit">Signin</Button>
+            {/*<Button onClick={e => this.signin(e)}>Signin</Button>*/}
           </Form>
         </Grid.Column>
         <Message>
-          No need to put your real password for now. Just use your name (or any
-          other) and leave password blank. You cannot interact with steem in
-          that case but it will give you a preview of the platform.
+          Insteem uses your private posting key to interact with steem. This key
+          is stored unencrypted in your browser and can only be used for posting
+          and voting. Make sure you are only using your posting key. Keep your
+          active/owner keys safe.
         </Message>
       </Grid>
     );
