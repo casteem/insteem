@@ -5,7 +5,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   max-width: 60%;
-  margin: auto;
+  margin: 1rem auto;
 `;
 const Label = styled.label`
   font-size: 1.2rem;
@@ -46,13 +46,14 @@ const handleChange = (event, { update }) => {
 };
 
 const StoryForm = props => {
-  const { onSubmit } = props;
+  const { story, onSubmit } = props;
   return (
     <Form onSubmit={handleSubmit}>
       <Label>Title</Label>
       <Input
         type="text"
         name="title"
+        value={story.title}
         placeholder="Add title"
         onChange={e => handleChange(e, props)}
         required
@@ -60,6 +61,7 @@ const StoryForm = props => {
       <Label>Summary</Label>
       <Textarea
         name="summary"
+        value={story.summary}
         placeholder="Write a short Intro for your story"
         onChange={e => handleChange(e, props)}
         required
@@ -67,13 +69,15 @@ const StoryForm = props => {
       <Label>Topics</Label>
       <Input
         type="text"
-        name="topics"
+        name="tags"
+        value={story.tags}
         placeholder="Add topics for your story"
         onChange={e => handleChange(e, props)}
         required
       />
       <Textarea
         name="body"
+        value={story.body}
         rows="10"
         onChange={e => handleChange(e, props)}
         required

@@ -6,6 +6,7 @@ import { createTagArray } from "services/helpers/helpers";
 import { updateStory, clearStory } from "services/state/stories/actions";
 
 import StoryForm from "./components/StoryForm";
+import StoryPreview from "./components/StoryPreview";
 
 // const update = story, updateStory => {
 //   .props.updateStory(story);
@@ -33,7 +34,8 @@ const StoryCreateScene = props => {
     <div>
       <StoryForm story={story} update={updateStory} />
 
-      {/*<div>{story.abstract}</div>*/}
+      <StoryPreview story={story} />
+
     </div>
   );
 };
