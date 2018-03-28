@@ -5,12 +5,12 @@ export const CLEAR_STORY = "CLEAR_STORY";
 
 // Submit the actual post to steem.
 // TODO: Implement api thunk.
-export const createStory = (title, abstract, body, tags) => {
+export const createStory = (title, summary, body, tags) => {
   return {
     type: SUBMIT_STORY,
     payload: {
       title: title,
-      abstract: abstract,
+      summary: summary,
       body: body,
       tags: tags
     }

@@ -8,13 +8,13 @@
 import { combineReducers } from "redux";
 
 import auth from "./auth/reducer";
-// import post from "./posts/reducer";
+import stories from "./stories/reducer";
 // import tags from "./tags/reducer";
 // import rehydrated from "./rehydrated/reducer";
 
 const reducer = combineReducers({
-  auth
-  // post,
+  auth,
+  stories
   // tags,
   // rehydrated
 });

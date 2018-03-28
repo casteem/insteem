@@ -55,12 +55,14 @@ const StoryForm = props => {
         name="title"
         placeholder="Add title"
         onChange={e => handleChange(e, props)}
+        required
       />
       <Label>Summary</Label>
       <Textarea
         name="summary"
         placeholder="Write a short Intro for your story"
         onChange={e => handleChange(e, props)}
+        required
       />
       <Label>Topics</Label>
       <Input
@@ -68,9 +70,13 @@ const StoryForm = props => {
         name="topics"
         placeholder="Add topics for your story"
         onChange={e => handleChange(e, props)}
-
+        required
       />
-      <Textarea name="body" rows="10"          onChange={e => handleChange(e, props)}
+      <Textarea
+        name="body"
+        rows="10"
+        onChange={e => handleChange(e, props)}
+        required
       />
       <Button type="submit">Publish</Button>
     </Form>
