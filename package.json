@@ -2,6 +2,7 @@
   "name": "insteem",
   "version": "0.1.1",
   "private": true,
+  "homepage" : "http://steem-racing.github.io/insteem",
   "dependencies": {
     "apollo-cache-inmemory": "^1.1.5",
     "apollo-client": "^2.2.0",
@@ -41,6 +42,8 @@
     "xmldom": "^0.1.27"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
