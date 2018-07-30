@@ -2,7 +2,7 @@
   "name": "insteem",
   "version": "1.0.0",
   "private": true,
-  "homepage" : "http://steem-racing.github.io",
+  "homepage" : "https://steem-racing.github.io",
   "dependencies": {
     "apollo-cache-inmemory": "^1.3.0-beta.6",
     "apollo-client": "^2.3.7",
